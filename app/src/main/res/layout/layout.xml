@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+
     tools:context=".Activites.MainActivity">
 
     <!--edit text for searching our currency-->
@@ -14,18 +14,18 @@
         android:id="@+id/idEdtCurrency"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:focusable="auto"
         android:hint="Search Currency"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/idRVcurrency"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/idEdtCurrency"
-        tools:listitem="@layout/currency_rv_item" />
+        tools:listitem="@layout/currencyitem" />
 
     <!--progress bar for loading indicator-->
 

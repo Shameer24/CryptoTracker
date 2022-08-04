@@ -4,24 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#171620"
     android:id="@+id/rootLayout"
-    tools:context=".Activites.MainActivity" >
+    tools:context=".Activites.MainActivity">
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RVcurrencies"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/search_bar" />
+        android:layout_below="@id/search_bar"
+        android:background="#171620" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appbarlayout">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="@color/black"
+            android:background="#CE3361"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <EditText
         android:id="@+id/search_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@id/trendsButton"
-        android:layout_marginTop="10dp"
-        android:hint="Search Cryptocurrency"
+        android:layout_margin="20dp"
+        android:background="@drawable/search_bg"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:hint="Search.."
+        android:drawableLeft="@drawable/search_img"
+        android:textColorHighlight="@color/white"
         android:textSize="20dp" />
+
 
     <Button
         android:id="@+id/trendsButton"
@@ -29,6 +53,8 @@
         android:layout_height="47dp"
         android:layout_alignParentStart="true"
         android:layout_marginStart="51dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/appbarlayout"
         android:text="Crypto Trends" />
 
     <Button
@@ -37,6 +63,8 @@
         android:layout_height="47dp"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="51dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/appbarlayout"
         android:text="all alerts" />
 
 </RelativeLayout>

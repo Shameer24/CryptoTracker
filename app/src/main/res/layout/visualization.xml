@@ -28,16 +28,19 @@
         android:id="@+id/coins"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:orientation="horizontal">
         <RadioButton
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:text="BTCUSD"
             android:textStyle="bold" />
 
         <RadioButton
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:text="ETHUSD"
             android:textStyle="bold" />
 
@@ -45,6 +48,7 @@
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="DOGEUSD"
+            android:textColor="@color/black"
             android:textStyle="bold"/>
     </RadioGroup>
 
@@ -58,18 +62,21 @@
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:text="1day" />
 
         <RadioButton
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:text="1hr" />
 
         <RadioButton
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:text="1m"/>
     </RadioGroup>
 
