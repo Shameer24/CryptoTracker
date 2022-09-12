@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_margin="6dp"
+    android:id="@+id/carditem"
+    android:background="@color/primary"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/nameofcoin"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#a5a5a5"
+        android:text="name"
+        android:textAlignment="center"
+        android:textSize="16dp" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="250dp"
+        android:id="@+id/desc"
+        android:text="Description :"
+        android:textSize="18dp"
+        android:textColor="@color/white"
+        android:layout_below="@+id/nameofcoin"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/desc"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/coindesc"
+        android:padding="2dp"
+        android:background="@drawable/border"
+        android:textColor="#a1a0a1"
+        android:text="hello"
+        android:justificationMode="inter_word"
+        android:textSize="14dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Social links:"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/coindesc"
+        android:layout_marginTop="20dp"
+        android:id="@+id/social"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/social"
+        android:layout_marginTop="10dp"
+        android:id="@+id/link"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/website"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/twitter"
+        android:background="@drawable/twitter"
+        android:layout_toRightOf="@+id/link"
+        android:layout_below="@+id/social"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/reddit"
+        android:background="@drawable/reddit"
+        android:layout_toRightOf="@+id/twitter"
+        android:layout_below="@+id/social"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"/>
+
+
+    <Button
+        android:id="@+id/setAlert"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp"
+        android:backgroundTint="#23C1CF"
+        android:text="Set Alert"
+        android:textColor="@color/black"
+        />
+</RelativeLayout>
