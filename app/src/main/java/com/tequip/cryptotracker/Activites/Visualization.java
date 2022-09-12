@@ -1,5 +1,6 @@
 package com.tequip.cryptotracker.Activites;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.*;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import okhttp3.Call;
@@ -17,6 +19,8 @@ import okhttp3.Response;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.tequip.cryptotracker.R;
 import com.github.mikephil.charting.charts.CandleStickChart;
@@ -48,12 +52,28 @@ public class Visualization extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.visualization);
+        setContentView(R.layout.visual_details);
 
         candleStickChart = findViewById(R.id.candleStick);
         coins = findViewById(R.id.coins);
         time = findViewById(R.id.time);
         apply = findViewById(R.id.apply);
+
+
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        Toolbar toolbar = drawerLayout.findViewById(R.id.toolbar);
+        TextView title = toolbar.findViewById(R.id.title);
+        setSupportActionBar(toolbar);
+        title.setText("Trending Charts");
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Visualization.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
         apply.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,7 +179,7 @@ public class Visualization extends AppCompatActivity {
                     set1.setShadowWidth(0.8f);
                     set1.setDecreasingColor(getResources().getColor(R.color.red));
                     set1.setDecreasingPaintStyle(Paint.Style.FILL);
-                    set1.setIncreasingColor(getResources().getColor(R.color.purple_700));
+                    set1.setIncreasingColor(getResources().getColor(R.color.purple_200));
                     set1.setIncreasingPaintStyle(Paint.Style.FILL);
                     set1.setNeutralColor(Color.BLACK);
                     set1.setDrawValues(false);

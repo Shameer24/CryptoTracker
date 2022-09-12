@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.tequip.cryptotracker.DBHandler;
 import com.tequip.cryptotracker.Model.CurrencyModal;
@@ -29,13 +31,27 @@ public class SetAlert extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.set_alert);
+        setContentView(R.layout.setalert_details);
         myDB = new DBHandler(this);
 
         Intent exp =  getIntent();
 
-        CurrencyModal currencyModal = (CurrencyModal) exp.getSerializableExtra("currency_modal");
+        CurrencyModal currencyModal = (CurrencyModal) exp.getSerializableExtra("pos");
         System.out.println(currencyModal.getCurrencyName());
+
+
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        Toolbar toolbar = drawerLayout.findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Set Alert");
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SetAlert.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
 //        DisplayMetrics dm = new DisplayMetrics();
 //        getWindowManager().getDefaultDisplay().getMetrics(dm);

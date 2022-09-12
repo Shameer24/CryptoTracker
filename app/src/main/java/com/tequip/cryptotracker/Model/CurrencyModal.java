@@ -10,8 +10,11 @@ public class CurrencyModal implements Serializable {
     private String name;
     private String symbol;
     public int id;
+    private double circulating_supply;
+    private double max_supply;
     private double low_limit = NULL;
     public Quote quote;
+
 
     public Quote getQuote() {
         return quote;
@@ -28,12 +31,33 @@ public class CurrencyModal implements Serializable {
             double percent_change_1h;
             double percent_change_24h;
             double percent_change_7d;
+            double volume_24h;
+            double market_cap;
 
             public currency() {
                 this.price = price;
                 this.percent_change_1h = percent_change_1h;
                 this.percent_change_24h = percent_change_24h;
                 this.percent_change_7d = percent_change_7d;
+                this.market_cap= market_cap;
+                this.volume_24h = volume_24h;
+            }
+
+            public long getVolume_24h() {
+                return (long) volume_24h;
+            }
+
+            public void setVolume_24h(int volume_24h) {
+                this.volume_24h = volume_24h;
+            }
+
+            public long getMarket_cap() {
+                long longvar = (long) market_cap;
+                return longvar;
+            }
+
+            public void setMarket_cap(int market_cap) {
+                this.market_cap = market_cap;
             }
 
             //getter and setter
@@ -70,11 +94,29 @@ public class CurrencyModal implements Serializable {
     }
 
 
-    public CurrencyModal(String currencyName, String currencySymbol, double currencyRate, double percent_change_1h, double percent_change_24h, double percent_change_7d, int id)
+    public long getCirculating_supply() {
+        return (long)circulating_supply;
+    }
+
+    public void setCirculating_supply(long circulating_supply) {
+        this.circulating_supply = circulating_supply;
+    }
+
+    public long getMax_supply() {
+        return (long)max_supply;
+    }
+
+    public void setMax_supply(long max_supply) {
+        this.max_supply = max_supply;
+    }
+
+    public CurrencyModal(String currencyName, String currencySymbol, double currencyRate, double percent_change_1h, double percent_change_24h, double percent_change_7d, int id, long circulating_supply, long max_supply)
     {
         this.name = currencyName;
         this.symbol = currencySymbol;
         this.id = id;
+        this.circulating_supply=circulating_supply;
+        this.max_supply= max_supply;
     }
 
     public  int getId(){

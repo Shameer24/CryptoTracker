@@ -19,52 +19,77 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
         android:id="@+id/appbarlayout">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:titleTextColor="@color/black"
-            android:background="#CE3361"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+            app:titleTextColor="@color/white"
+            android:background="#171620"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:id="@id/title"/>
+        </androidx.appcompat.widget.Toolbar>
 
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <EditText
         android:id="@+id/search_bar"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_below="@id/trendsButton"
         android:layout_margin="20dp"
         android:background="@drawable/search_bg"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:hint="Search.."
-        android:drawableLeft="@drawable/search_img"
+        android:layout_below="@+id/linear"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:hint=" Search.."
+        android:drawableStart="@drawable/search_img"
+        android:paddingLeft="20dp"
         android:textColorHighlight="@color/white"
-        android:textSize="20dp" />
+        android:textSize="16dp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linear"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginTop="70dp">
 
     <Button
         android:id="@+id/trendsButton"
         android:layout_width="wrap_content"
-        android:layout_height="47dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="51dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:textColor="@color/black"
+        android:background="@drawable/search_bg"
         android:layout_below="@+id/appbarlayout"
-        android:text="Crypto Trends" />
+        android:text="Crypto Trends"
+        />
 
     <Button
         android:id="@+id/alertsButton"
         android:layout_width="wrap_content"
-        android:layout_height="47dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="51dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        android:background="@drawable/search_bg"
         android:layout_below="@id/appbarlayout"
-        android:text="all alerts" />
+        android:text="All Alerts" />
+    </LinearLayout>
 
 </RelativeLayout>

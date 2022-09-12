@@ -11,8 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.tequip.cryptotracker.R;
 
 public class CurrencyViewHolder extends RecyclerView.ViewHolder {
-    public TextView currencyName,currencySymbol, currencyRate, oneHour, twentyfourHours, sevenDays;
-    public ImageButton setAlert;
+    public TextView price,currencyName,currencySymbol, currencyRate, oneHour, twentyfourHours, sevenDays;
     public ConstraintLayout constraintLayout;
     public CurrencyViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -22,8 +21,9 @@ public class CurrencyViewHolder extends RecyclerView.ViewHolder {
         oneHour = itemView.findViewById(R.id.oneHour);
         twentyfourHours = itemView.findViewById(R.id.twentyfourHours);
         sevenDays = itemView.findViewById(R.id.sevenDays);
-        setAlert = (ImageButton) itemView.findViewById(R.id.setAlert);
+
         constraintLayout=itemView.findViewById(R.id.carditem);
+        price = itemView.findViewById(R.id.price);
     }
 
 }

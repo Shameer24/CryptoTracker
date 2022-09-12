@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.graphics.drawable.DrawerArrowDrawable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -32,6 +33,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.tequip.cryptotracker.Adapter.RVadapter;
@@ -57,7 +59,7 @@ class oData{
 }
 public class MainActivity extends DrawerActivity {
 
-    private ArrayList<CurrencyModal> currencyModalArrayList = new ArrayList<>();
+    public ArrayList<CurrencyModal> currencyModalArrayList = new ArrayList<>();
     private RVadapter adapter;
     private RecyclerView recyclerView;
     private Button trendButton;
@@ -136,17 +138,20 @@ public class MainActivity extends DrawerActivity {
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         Toolbar toolbar = drawerLayout.findViewById(R.id.toolbar);
+        TextView title = toolbar.findViewById(R.id.title);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Home");
+        title.setText("Home");
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
 
         NavigationView navigationView = drawerLayout.findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener((NavigationView.OnNavigationItemSelectedListener) this);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.menu_drawer_open, R.string.menu_drawer_close);
-        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.black));
+        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white));
+
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -217,6 +222,8 @@ public class MainActivity extends DrawerActivity {
         }
         adapter.filterList(filteredList);
     }
+
+
 
     private void setupAdapter(){
         adapter = new RVadapter(recyclerView, currencyModalArrayList,MainActivity.this);

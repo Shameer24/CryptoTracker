@@ -31,7 +31,7 @@ public class AlertAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
         AlertViewHolder holderItem = (AlertViewHolder) holder;
         holderItem.name.setText(alertModal.getCoin_name());
-        holderItem.limit.setText(String.valueOf(alertModal.getCoin_limit()));
+        holderItem.limit.setText("$ "+String.valueOf(alertModal.getCoin_limit()));
 
     }
 

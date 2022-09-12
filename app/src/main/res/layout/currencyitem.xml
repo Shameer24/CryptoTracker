@@ -52,15 +52,7 @@
         <!--            android:layout_toRightOf="@id/currencyName"-->
         <!--            android:text="Set alert" />-->
 
-        <ImageButton
-            android:id="@+id/setAlert"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/currencyRate"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="25dp"
-            android:backgroundTint="@color/black"
-            app:srcCompat="@android:drawable/ic_popup_reminder" />
+
 
         <TextView
             android:id="@+id/currencySymbol"
@@ -80,7 +72,7 @@
             android:layout_height="30dp"
             android:layout_below="@id/currencySymbol"
             android:layout_marginLeft="7dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:textColor="@color/white"
             android:text="1h"
             android:textAlignment="center" />
@@ -92,7 +84,7 @@
             android:layout_below="@id/currencySymbol"
             android:layout_toRightOf="@+id/textView"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:text=""
             android:textAlignment="center" />
 
@@ -102,7 +94,7 @@
             android:layout_height="30dp"
             android:layout_below="@id/currencySymbol"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="11dp"
+            android:layout_marginTop="15dp"
             android:layout_toLeftOf="@+id/blankcenter"
             android:text="24h"
             android:textColor="@color/white"
@@ -113,7 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/currencySymbol"
-            android:layout_marginTop="11dp"
+            android:layout_marginTop="15dp"
             android:layout_toRightOf="@id/blankcenter"
             android:text=""
             android:textAlignment="center" />
@@ -132,7 +124,7 @@
             android:layout_height="30dp"
             android:layout_below="@id/currencySymbol"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:layout_toLeftOf="@+id/sevenDays"
             android:text="7d"
             android:textColor="@color/white"
@@ -144,7 +136,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/currencySymbol"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:layout_alignParentEnd="true"
             android:text=""
             android:textAlignment="center" />
@@ -163,7 +155,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_below="@+id/textView3"
-            android:background="#262531"/>
+            android:background="#23C1CF"/>
 
     </RelativeLayout>
 
